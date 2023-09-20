@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@800&family=PT+Sans:wght@400;700&display=swap');
+
+
+
+/* font-family: 'Lato';
+font-family: 'Montserrat', sans-serif;
+font-family: 'PT Sans', sans-serif; */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0000006B;
+    
+}
+
+.form-button {
+    width: 550px;
+    font-family: 'Lato', sans-serif;
+    padding: 14px 10px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 5px;
+    height: 48px;
+    background: #E5266E;
+
+}
