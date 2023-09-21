@@ -44,7 +44,8 @@ font-family: 'PT Sans', sans-serif; */
     display: none;
 
 }
-.options.active{
+
+.options.active {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -56,8 +57,9 @@ font-family: 'PT Sans', sans-serif; */
     border: 1px solid #ccc;
 
 }
+
 .options__option {
-    
+
     padding: 10px 20px;
     font-family: PT Sans;
     font-size: 16px;
@@ -256,7 +258,7 @@ font-family: 'PT Sans', sans-serif; */
     text-align: center;
     color: #fff;
     text-decoration: underline;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 /* middle */
@@ -348,4 +350,65 @@ font-family: 'PT Sans', sans-serif; */
     border-radius: 5px;
     height: 48px;
     background: rgb(229, 38, 110);
+}
+
+@media screen and (width<=2560px) {
+    .container {
+        width: 35%;
+    }
+}
+
+@media screen and (width<=1920px) {
+    .container {
+        width: 50%;
+    }
+}
+
+@media screen and (width<=1920px) {
+    .container {
+        width: 50%;
+    }
+}
+@media screen and (width<=1440px) {
+    .container {
+        width: 60%;
+    }
+}
+
+
+@media screen and (width<=1024px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media screen and (width<=768px) {
+    .container {
+        width: 100%;
+        padding: 5px 5px;
+    }
+}
+
+@media screen and (width<=425px) {
+    .container {
+        padding: 5px 5px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .header-main {
+        width: 100%;
+    }
+
+    .header-foto__avatar {
+        margin-bottom: 20px;
+    }
+
+    .button-block__cancel {
+        margin-bottom: 15px;
+    }
 }
