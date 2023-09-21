@@ -18,16 +18,18 @@
                 <div class="header-main">
                     <div class="header-main__block">
                         <label>
-                            <textarea class="header-main__block__input name " type="text" wrap="off" required></textarea>
+                            <textarea class="header-main__block__input name " type="text" wrap="off"
+                                required></textarea>
                             <span class="header-main__block__title required">Название организации</span>
                         </label>
                     </div>
                     <div class="header-main__block"><label>
-                            <textarea class="header-main__block__input phone" type="phone" wrap="off" required></textarea> <span
+                            <textarea class="header-main__block__input phone" type="phone" wrap="off"
+                                required></textarea><span
                                 class="header-main__block__title required">Телефон</span></label>
                     </div>
                     <div class="header-main__block"><label>
-                            <textarea class="header-main__block__input email" type="email" required></textarea> <span
+                            <textarea id="email" class="header-main__block__input email" type="email" required></textarea> <span
                                 class="header-main__block__title required">E-mail</span></label>
                     </div>
 
@@ -40,16 +42,21 @@
                         <div class="header-foto__avatar__img"><img src="./images/ellipse.png" alt="ellipse"></div>
                         <div class="header-foto__avatar__cross"><img src="./images/cross.png" alt="cross"></div>
                         <div class="header-foto__avatar__vector"><img src="./images/vector.png" alt="vector"></div>
-                        <div class="header-foto__avatar__text">Выберите файл</div>
+                        <div class="header-foto__avatar__text">Выберите файл
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="middle-block">
                 <div class="header-main__block"><label>
-                        <textarea class="header-main__block__input select required" type="text"
-                            disabled>Экология</textarea>
+                        <textarea id="select" class="header-main__block__input select required" type="text"></textarea>
                         <span class="header-main__block__title select required">Направление</span>
                         <img class="header-main__block arrow" src="./images/select.png" alt="arrow"></label>
+                    <div class="options">
+                        <div class="options__option">Экология</div>
+                        <div class="options__option">Медицина</div>
+                        <div class="options__option">Экономика</div>
+                    </div>
                 </div>
                 <div class="middle-block-input"><label><input class="middle-block-input__input" type="text">
                         <img src="./images/global.png" alt="" class="middle-block-input__icon"></label>
