@@ -3,6 +3,7 @@ const userName = document.querySelector('.name'),
     email = document.getElementById('email'),
     select = document.getElementById('select'),
     options = document.querySelector('.options'),
+    errorSlot = document.querySelector('.error'),
     startBtn = document.querySelector('.start-button'),
     acceptBtn = document.querySelector('.button-block__accept'),
     cancelBtn = document.querySelector('.button-block__cancel'),
@@ -54,20 +55,33 @@ function requiredHandler() {
         selectValid = false,
         formValid;
     //Проверки нейма-----
-    if (userName.value === '') {
-        userName.style.border = '1px solid red';
-        nameValid = false
-    } else {
-        userName.style.border = '1px solid #ccc'
-        nameValid = true
+    try {
+        if (userName.value === '') {
+            userName.style.border = '1px solid red';
+            nameValid = false
+            throw new Error()
+        } else {
+            userName.style.border = '1px solid #ccc'
+            nameValid = true
+        }
+    } catch (err) {
+        errorSlot.innerHTML = `<red> не может быть пустым</red>`
+        return
     }
-    if (userName.value.length < 3) {
-        userName.style.border = '1px solid red'
-        nameValid = false
 
-    } else {
-        userName.style.border = '1px solid #ccc'
-        nameValid = true
+    try {
+        if (userName.value.length < 3) {
+            userName.style.border = '1px solid red';
+            nameValid = false
+            throw new Error()
+        } else {
+            errorSlot.innerHTML = ""
+            userName.style.border = '1px solid #ccc'
+            nameValid = true
+        }
+    } catch (err) {
+        errorSlot.innerHTML = `<red> меньше 3 символов</red>`
+        return
     }
     //----------------------
 
@@ -126,7 +140,7 @@ function requiredHandler() {
         acceptBtn.style.backgroundColor = '#5cffa3'
         acceptBtn.textContent = 'Спасибо за регистрацию'
     } else {
-        alert('Заполнены не все поля!')
+        alert('Некорректно заполнены поля!')
     }
 }
 
