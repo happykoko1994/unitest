@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-spacing: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    text-align: center;
+    
+}
+
+td.user-id {
+    width: 10%;
+}
+
+td.id {
+    width: 10%;
+}
+
+td.title {
+
+    width: 30%;
+}
+
+td.body {
+    width: 50%;
+}
