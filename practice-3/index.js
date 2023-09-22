@@ -65,14 +65,17 @@ function search() {
     let tr = table.getElementsByTagName("tr")
     let filter = input.value.toUpperCase();
     if (input.value.length >= 3) {
-        for (let i = 0; i < tr.length; i++) {
-            for (let j = 0; j <= 4; j++) {
-                let td = tr[i].getElementsByTagName("td")[0];
+
+        for (let i = 0; i <= 100; i++) {
+            for (let j = 0; j < 4; j++) {
+
+                let td = tr[i].getElementsByTagName("td")[j];
                 if (td) {
                     let txtValue = td.textContent || td.innerText || td.innerHTML
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
-
+                        if (j !== 3 && i !== 100) i++
+                        if (i === 100) { return }
                     } else {
                         tr[i].style.display = "none";
 
