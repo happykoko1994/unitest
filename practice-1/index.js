@@ -145,9 +145,6 @@ function requiredHandler() {
 }
 
 //Ограничиваем ввод букв
-window.addEventListener('keypress', (e) => {
-    console.log(e.keyCode)
-})
 phone.addEventListener('keypress', function (event) {
 
 
