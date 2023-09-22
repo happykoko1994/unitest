@@ -9,6 +9,7 @@ table {
     border-spacing: 0;
     width: 100%;
     border-collapse: collapse;
+    flex-direction: column;
 }
 
 td {
@@ -16,6 +17,9 @@ td {
     padding: 4px 8px;
     text-align: center;
     
+}
+th{
+    cursor: pointer;
 }
 
 td.user-id {
