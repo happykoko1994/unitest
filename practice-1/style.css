@@ -379,33 +379,33 @@ red {
     }
 }
 
-@media screen and (width<=1920px) {
+@media screen and (max-width:1920px) {
     .container {
         width: 50%;
     }
 }
 
-@media screen and (width<=1440px) {
+@media screen and (max-width:1440px) {
     .container {
         width: 60%;
     }
 }
 
 
-@media screen and (width<=1024px) {
+@media screen and (max-width:1024px) {
     .container {
         width: 90%;
     }
 }
 
-@media screen and (width<=768px) {
+@media (max-width:768px) {
     .container {
         width: 100%;
         padding: 5px 5px;
     }
 }
 
-@media screen and (width<=425px) {
+@media (max-width:420px) {
     .container {
         margin: 0;
         padding: 5px 5px;
