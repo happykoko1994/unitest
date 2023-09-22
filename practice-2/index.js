@@ -8,13 +8,8 @@ function request() {
                 let newRow = document.createElement('tr')
                 newRow.innerHTML = `<td>${data[i].id}</td><td>${data[i].userId}</td><td>${data[i].title}</td><td>${data[i].body}</td>`
                 tbody.append(newRow)
-                }
-                
-
-    console.log(data);
-
-
-});
+            }
+        });
 }
 request()
 
