@@ -97,7 +97,5 @@ function search() {
 
 
 request()
-window.addEventListener('click', (e) => {
-    console.log(input.value);
 
-})
+
