@@ -1,6 +1,9 @@
-const table = document.querySelector("#sortableTable");
+let table = document.querySelector("#sortableTable");
 const th = table.querySelectorAll("th");
 let tbody = table.querySelector("tbody");
+const input = document.querySelector("input");
+
+
 
 // Получение данных
 
@@ -54,8 +57,47 @@ th.forEach((header) => {
         table.appendChild(tbody);
     });
 });
+
+//Поиск
+input.addEventListener('keyup', search)
+function search() {
+    let tr = table.getElementsByTagName("tr")
+    let filter = input.value.toUpperCase();
+    if (input.value.length >= 3) {
+        for (let i = 0; i < tr.length; i++) {
+            for (let j = 0; j < 5; j++) {
+                let td = tr[i].getElementsByTagName("td")[j];
+                if (td) {
+                    let txtValue = td.textContent || td.innerText || td.innerHTML
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        i++
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    }
+    if (input.value.length < 3) {
+        for (let i = 0; i < tr.length; i++) {
+            for (let j = 0; j < 5; j++) {
+                let td = tr[i].getElementsByTagName("td")[j];
+                if (td) {
+                    tr[i].style.display = "";
+                }
+            }
+        }
+    }
+    else {
+        return
+    }
+
+}
+
+
 request()
 window.addEventListener('click', (e) => {
-    console.log(typeof e.target.textContent);
+    console.log(input.value);
 
 })
