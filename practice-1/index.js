@@ -144,25 +144,8 @@ function requiredHandler() {
     }
 }
 
-//Ограничиваем ввод букв
-phone.addEventListener('keypress', function (event) {
-
-
-    // Разрешаем: backspace, delete, tab и escape
-    if (event.keyCode == 43 || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 ||
-        // Разрешаем: home, end, влево, вправо
-        (event.keyCode >= 35 && event.keyCode <= 39)) {
-        // Ничего не делаем
-        return;
-    } else {
-        // Запрещаем все, кроме цифр на основной клавиатуре, а так же Num-клавиатуре
-        if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
-            event.preventDefault();
-        }
-        // Остальные исключения
-        if (event.keyCode === 101 || event.keyCode === 97 || event.keyCode === 100 || event.keyCode === 102 || event.keyCode === 103 || event.keyCode === 104 || event.keyCode === 39 || event.keyCode === 99 || event.keyCode === 98 || event.keyCode === 46 || event.keyCode === 105) {
-            event.preventDefault()
-        }
-    }
+// Регулярка для телефона
+phone.addEventListener('input', function (e) {
+    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+    e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : "");
 });
-
