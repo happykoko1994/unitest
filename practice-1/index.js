@@ -8,7 +8,11 @@ const userName = document.querySelector('.name'),
     acceptBtn = document.querySelector('.button-block__accept'),
     cancelBtn = document.querySelector('.button-block__cancel'),
     modal = document.querySelector('.container'),
-    mainContainer = document.querySelector('.main-container');
+    mainContainer = document.querySelector('.main-container'),
+    avatar = document.querySelector('.header-foto__avatar__img'),
+    cross = document.querySelector('.header-foto__avatar__cross'),
+    logo = document.querySelector('.logo');
+
 
 //Модальное окно   
 
@@ -53,6 +57,7 @@ function requiredHandler() {
         phoneValid = false,
         emailValid = false,
         selectValid = false,
+        avatarValid = false,
         formValid;
     //Проверки нейма-----
     try {
@@ -133,7 +138,19 @@ function requiredHandler() {
         select.style.border = '1px solid #ccc'
         selectValid = true
     }
-    formValid = [nameValid, phoneValid, emailValid, selectValid];
+    if (avatar.firstChild.getAttribute("src") === './images/ellipse.png') {
+        logo.style.color = 'red'
+        avatar.style.border = '1px solid red'
+        avatarValid = false
+    } else {
+        logo.style.color = '#6A6E72'
+        avatar.style.border = 'none'
+        avatarValid = true;
+        console.log('work');
+
+    }
+
+    formValid = [nameValid, phoneValid, emailValid, selectValid, avatarValid];
     const acceptForm = formValid.indexOf(false)
     if (acceptForm === -1) {
         acceptBtn.style.color = 'black '
@@ -149,3 +166,24 @@ phone.addEventListener('input', function (e) {
     var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
     e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : "");
 });
+
+//Аватарка
+
+function download(input) {
+    let file = input.files[0];
+    let reader = new FileReader;
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+        avatar.firstChild.src = reader.result
+    }
+}
+cross.addEventListener('click', reset)
+function reset() {
+    let reset = './images/ellipse.png'
+
+    avatar.firstChild.src = reset
+
+}
+
+console.log(avatar.firstChild.getAttribute("src"));

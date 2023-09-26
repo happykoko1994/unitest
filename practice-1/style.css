@@ -69,7 +69,7 @@ font-family: 'PT Sans', sans-serif; */
     cursor: pointer;
 }
 
-red {
+.red {
     color: red;
 }
 
@@ -239,15 +239,31 @@ red {
     flex-direction: column;
     height: 100%;
 
+
 }
 
 .header-foto__avatar {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .header-foto__avatar__img {
     padding: 6px;
+    width: 175px;
+    height: 175px;
+    
+    position: relative;
+    
+}
 
+.header-foto__avatar__img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
 }
 
 .header-foto__avatar__cross {
@@ -265,6 +281,12 @@ red {
 
 }
 
+.header-foto__avatar__cross img {
+    width: 50%;
+    border-radius: 0px;
+    height: 50%;
+}
+
 .header-foto__avatar__vector {
     display: flex;
     justify-content: center;
@@ -277,6 +299,7 @@ red {
 }
 
 .header-foto__avatar__text {
+    content: "Выберите файл";
     position: absolute;
     top: 76px;
     left: 40px;
@@ -289,6 +312,10 @@ red {
     color: #fff;
     text-decoration: underline;
     cursor: pointer;
+}
+
+input[type=file] {
+    display: none;
 }
 
 /* middle */

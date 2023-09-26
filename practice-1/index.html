@@ -40,14 +40,19 @@
                 </div>
                 <div class="header-foto">
                     <div class="header-foto__text">
-                        <div class="header-foto__text__logo"><span class="required">Логотип (jpeg,png)</span></div>
+                        <div class="header-foto__text__logo"><span class="logo required">Логотип (jpeg,png)</span></div>
                     </div>
                     <div class="header-foto__avatar">
-                        <div class="header-foto__avatar__img"><img src="./images/ellipse.png" alt="ellipse"></div>
-                        <div class="header-foto__avatar__cross"><img src="./images/cross.png" alt="cross"></div>
-                        <div class="header-foto__avatar__vector"><img src="./images/vector.png" alt="vector"></div>
-                        <div class="header-foto__avatar__text">Выберите файл
+                        <div class="header-foto__avatar__img"><img src="./images/ellipse.png" alt="ellipse">
+                            <div class="header-foto__avatar__cross"><img src="./images/cross.png" alt="cross"></div>
+                            <label class="header-foto__avatar__vector"><img src="./images/vector.png"
+                                    alt="vector"><input type="file" onchange="download(this)"></label>
+                            <label class="header-foto__avatar__text">Выберите файл<input type="file"
+                                    onchange="download(this)"></label>
                         </div>
+
+
+                        <!-- <input type="file" onchange="download(this)"> -->
                     </div>
                 </div>
             </div>
