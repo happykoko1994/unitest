@@ -185,5 +185,3 @@ function reset() {
     avatar.firstChild.src = reset
 
 }
-
-console.log(avatar.firstChild.getAttribute("src"));
